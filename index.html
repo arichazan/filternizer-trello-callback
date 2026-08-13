@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Returning to Filternizer</title>
+  </head>
+  <body>
+    <p>Returning to Filternizer…</p>
+    <script>
+      // Trello places its token in this page's URL fragment. A fragment is never
+      // sent to the server; it is immediately handed to the installed app.
+      window.location.replace(`filternizer://trello-auth${window.location.hash}`);
+    </script>
+  </body>
+</html>
