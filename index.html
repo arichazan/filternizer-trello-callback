@@ -9,9 +9,10 @@
   <body>
     <p>Returning to Filternizer…</p>
     <script>
-      // Trello places its token in this page's URL fragment. A fragment is never
-      // sent to the server; it is immediately handed to the installed app.
-      window.location.replace(`filternizer://trello-auth${window.location.hash}`);
+      // Trello places its token in this page's URL fragment; the app's anti-forgery `state`
+      // nonce is in the query string. Neither the fragment nor this script sends anything to a
+      // server: both are handed straight to the installed app, which verifies the state.
+      window.location.replace(`filternizer://trello-auth${window.location.search}${window.location.hash}`);
     </script>
   </body>
 </html>
